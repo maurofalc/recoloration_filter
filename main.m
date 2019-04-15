@@ -6,7 +6,7 @@
 % deve-se especificar a pasta e o formato das imagens
 imagefiles = dir(fullfile('images', '*.jpg'));
 nfiles = length(imagefiles);
-for j = 1:nfiles
+for j = 1:nfiles 
     filename = imagefiles(j).name;
     currentimage = imread(strcat('images/', filename));
     image = im2double(currentimage);
