@@ -3,6 +3,7 @@
 % Francisco Mauro Falcão Matias Filho
 
 % aquisição das imagens
+% deve-se especificar a pasta e o formato das imagens
 imagefiles = dir(fullfile('images', '*.jpg'));
 nfiles = length(imagefiles);
 for j = 1:nfiles

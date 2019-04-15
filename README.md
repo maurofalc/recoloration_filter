@@ -60,7 +60,7 @@ Logo, o filtro laplaciano pode ser definido por:
 
 ![](https://i.postimg.cc/mDfw7QxK/eq-28.png)
 
-Fazendo-se $\Delta x = \Delta y = 1$ na equação acima é possível obter uma máscara, ou *kernel*, de filtragem que representa uma implementação aproximada do laplaciano, da seguinte forma: 
+Fazendo-se [url=https://postimages.org/][img]https://i.postimg.cc/V0kcVTHR/eq-37.png[/img][/url] na equação acima é possível obter uma máscara, ou *kernel*, de filtragem que representa uma implementação aproximada do laplaciano, da seguinte forma: 
 
 ![](https://i.postimg.cc/bv2gGm5Q/eq-27.png)
 
@@ -76,11 +76,11 @@ A figura a seguir representa o efeito do realce do filtro laplaciano sobre uma i
 
 ### Transformada de Fourier 2-D
 
-Seja ![](https://i.postimg.cc/j2YzJKfT/eq-14.png) uma imagem digital de dimensões $M$x$N$. As equações a seguir constituem o par de transformadas discretas de Fourier 2-D dessa imagem: 
+Seja ![i[x,y]](https://i.postimg.cc/P51nmQ0k/eq-15.png) uma imagem digital de dimensões [![eq-38.png](https://i.postimg.cc/QMrmTQZw/eq-38.png)](https://postimg.cc/WdX0RJ3w). As equações a seguir constituem o par de transformadas discretas de Fourier 2-D dessa imagem: 
 
-![](https://i.postimg.cc/GhbNs1dd/eq-7.png)
+[![eq-35.png](https://i.postimg.cc/nzSh61HP/eq-35.png)](https://postimg.cc/ZB3mNpv8)
 
-![](https://i.postimg.cc/kXhcXr5j/eq-8.png)
+[![eq-36.png](https://i.postimg.cc/1tX9cNpc/eq-36.png)](https://postimg.cc/G80wbtgH)
 
 ### Filtro Laplaciano
 
@@ -105,20 +105,38 @@ código, cuja função é definir o nível de contraste entre vermelho e azul
 ou verde e azul por meio da alteração da intensidade de azul em
 componentes com alta intensidade de vermelhou ou verde.
 
+<p align="center">
+<img src="https://i.postimg.cc/sfS2n7kw/img-5.png" alt="Representação do contraste entre as cores para diferentes valores de i.." width="100.0%" />
+<br>
+<i>Representação do contraste entre as cores para diferentes valores de ![i](https://i.postimg.cc/rpbH3dB9/eq-26.png).</i>
+</p>
+
 Dado um valor de ![i](https://i.postimg.cc/rpbH3dB9/eq-26.png), a heurística do filtro de recoloração funciona de
 seguinte forma:
 
 ![](https://i.postimg.cc/jddh6x9q/eq-32.png)
 
-[![eq-11.png](https://i.postimg.cc/hPhLYC0V/eq-11.png)](https://postimg.cc/svdGQ4q2)
+[![eq-33.png](https://i.postimg.cc/LsdfW2y1/eq-33.png)](https://postimg.cc/9DprR5Hm)
 
-![](https://i.postimg.cc/65SrxdHg/eq-12.png)
+[![eq-34.png](https://i.postimg.cc/FRpL1chy/eq-34.png)](https://postimg.cc/r0dmPD0s)
 
 Os parâmetros ![\alpha](https://i.postimg.cc/d01MzcLJ/eq-20.png), ![\beta](https://i.postimg.cc/50Yh25BG/eq-21.png) e ![\gamma](https://i.postimg.cc/7hSjgxQn/eq-22.png) são utilizados para calcular os novos pixels do canal azul da imagem, da seguinte maneira ![](https://i.postimg.cc/XJt0f1N4/eq-18.png). Dessa forma, quando ![i < 0](https://i.postimg.cc/WprRRnbq/eq-23.png), por exemplo, então ![\alpha > 0](https://i.postimg.cc/xTyW81m0/eq-24.png) e ![\beta = 0](https://i.postimg.cc/0yVFGXZF/eq-25.png), logo a intensidade de azul será maior em pixels de cor vermelha.
 
 ## Resultados
 
-Utilizou-se a ferramenta online Coblis (*Color Blindness Simulator*) para simular a visão de um daltônico para as imagens originais e compará-las com as obtidas pelo filtro de destaque.
+Utilizou-se a ferramenta online *Color Blindness Simulator* [Coblis](https://www.color-blindness.com/coblis-color-blindness-simulator/) para simular a visão de um daltônico para as imagens originais e compará-las com as obtidas pelo filtro de destaque.
+
+<p align="center">
+<img src="https://i.postimg.cc/MGysPsYz/img-6.png" alt="Mapa de Sobral e a simulação dele visto por um daltônico." width="100.0%" />
+<br>
+<i>Mapa de Sobral e a simulação dele visto por um daltônico.</i>
+</p>
+
+<p align="center">
+<img src="https://i.postimg.cc/NFT7FFPB/img-7.png" alt="Mapa de Sobral após aplicação do filtro de recoloração e a simulação dele visto por um daltônico." width="100.0%" />
+<br>
+<i>Mapa de Sobral após aplicação do filtro de recoloração e a simulação dele visto por um daltônico.</i>
+</p>
 
 ## Referências
 
