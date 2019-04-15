@@ -60,7 +60,7 @@ Logo, o filtro laplaciano pode ser definido por:
 
 ![](https://i.postimg.cc/mDfw7QxK/eq-28.png)
 
-Fazendo-se [url=https://postimages.org/][img]https://i.postimg.cc/V0kcVTHR/eq-37.png[/img][/url] na equação acima é possível obter uma máscara, ou *kernel*, de filtragem que representa uma implementação aproximada do laplaciano, da seguinte forma: 
+Fazendo-se [![eq-37.png](https://i.postimg.cc/vTWHcwrp/eq-37.png)](https://postimg.cc/V0kcVTHR) na equação acima é possível obter uma máscara, ou *kernel*, de filtragem que representa uma implementação aproximada do laplaciano, da seguinte forma: 
 
 ![](https://i.postimg.cc/bv2gGm5Q/eq-27.png)
 
@@ -106,9 +106,9 @@ ou verde e azul por meio da alteração da intensidade de azul em
 componentes com alta intensidade de vermelhou ou verde.
 
 <p align="center">
-<img src="https://i.postimg.cc/sfS2n7kw/img-5.png" alt="Representação do contraste entre as cores para diferentes valores de i.." width="100.0%" />
+<img src="https://i.postimg.cc/sfS2n7kw/img-5.png" alt="Representação do contraste entre as cores para diferentes valores de i.." width="60.0%" />
 <br>
-<i>Representação do contraste entre as cores para diferentes valores de ![i](https://i.postimg.cc/rpbH3dB9/eq-26.png).</i>
+<i>Representação do contraste entre as cores para diferentes valores de i.</i>
 </p>
 
 Dado um valor de ![i](https://i.postimg.cc/rpbH3dB9/eq-26.png), a heurística do filtro de recoloração funciona de
