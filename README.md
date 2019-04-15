@@ -28,12 +28,12 @@ Uma imagem digital, no domínio do espaço, consiste na representação de uma i
 <i>Representação de uma imagem digital no domínio do espaço.</i>
 </p>
 
-Imagens coloridas consistem em múltiplas matrizes, conhecidas como canais, que agregam em si a informação de cor associada a cada matriz. Para este trabalho, utilizou-se o modelo de cores RGB para tratar as informações das imagens. Este modelo baseia-se nas coordenadas cartesianas de um espaço formado por um cubo, cujos vértices são constituídos pelas cores primárias juntamente com as cores branca, preta, ciano, magenta e amarela, conforme ilustrado abaixo. Nessa representação,, cada pixel constitui um vetor de três componentes, os quais caracterizam as intensidades de vermelho, verde e azul.
+Imagens coloridas consistem em múltiplas matrizes, conhecidas como canais, que agregam em si a informação de cor associada a cada matriz. Para este trabalho, utilizou-se o modelo de cores RGB para tratar as informações das imagens. Este modelo baseia-se nas coordenadas cartesianas de um espaço formado por um cubo, cujos vértices são constituídos pelas cores primárias juntamente com as cores branca, preta, ciano, magenta e amarela, conforme ilustrado abaixo. Nessa representação, cada pixel constitui um vetor de três componentes, os quais caracterizam as intensidades de vermelho, verde e azul.
 
 <p align="center">
 <img src="https://i.postimg.cc/qByQLDjq/img-3.png" alt="Representação do cubo de cores RGB." width="30.0%" />
 <br>
-<i>Representação do Cubo de cores RGB.</i>
+<i>Representação do cubo de cores RGB.</i>
 </p>
 
 ### Filtros de Aguçamento Baseados em Derivadas
@@ -47,18 +47,22 @@ Nas imagens digitais, as bordas são transições parecidas com rampas em termos
 ### Filtro Laplaciano
 
 O filtro laplaciano é o operador derivativo mais simples para uma função de imagem, e é definido como:
+
 ![](https://i.postimg.cc/tg9tB9v4/eq-1.png)
 
-Contudo, em se tratando do contexto discreto das imagens digitais, tal operador não pode ser utilizado. Nesse caso, dada uma função contínua ![](https://i.postimg.cc/TYczk3CK/eq-2.png) obtida através da amostragem de ![](https://i.postimg.cc/j2YzJKfT/eq-14.png), é possível obter as seguintes aproximações para as derivadas parciais:
+Contudo, em se tratando do contexto discreto das imagens digitais, tal operador não pode ser utilizado. Nesse caso, dada uma função contínua ![f(x,y)](https://i.postimg.cc/T2ZRg1hg/eq-16.png) obtida através da amostragem de ![i[x,y]](https://i.postimg.cc/P51nmQ0k/eq-15.png), é possível obter as seguintes aproximações para as derivadas parciais:
+
 ![](https://i.postimg.cc/bvPL4xr8/eq-3.png)
 
 ![](https://i.postimg.cc/G22P1qC0/eq-4.png)
 
 Logo, o filtro laplaciano pode ser definido por:
+
 ![](https://i.postimg.cc/1tjGRwm8/eq-5.png)
 
 Fazendo-se $\Delta x = \Delta y = 1$ na equação acima é possível obter uma máscara, ou *kernel*, de filtragem que representa uma implementação aproximada do laplaciano, da seguinte forma: 
-![](https://i.postimg.cc/7P3d6LvK/eq-6.png)
+
+![](https://i.postimg.cc/W1scwkVF/eq-19.png)
 
 A figura a seguir representa o efeito do realce do filtro laplaciano sobre uma imagem. Observa-se que, embora a tonalidade do fundo tenha permanecido praticamente intacta, as bordas e as descontiuidades foram realçadas e os detalhes finos tornaram-se mais nítidos.
 
@@ -73,13 +77,14 @@ A figura a seguir representa o efeito do realce do filtro laplaciano sobre uma i
 ### Transformada de Fourier 2-D
 
 Seja ![](https://i.postimg.cc/j2YzJKfT/eq-14.png) uma imagem digital de dimensões $M$x$N$. As equações a seguir constituem o par de transformadas discretas de Fourier 2-D dessa imagem: 
+
 ![](https://i.postimg.cc/GhbNs1dd/eq-7.png)
 
 ![](https://i.postimg.cc/kXhcXr5j/eq-8.png)
 
 ### Filtro Laplaciano
 
-Pelo teorema da convolução, sabe-se que a convolução de dois sinais em um domínio é análoga à multiplicação ponto a ponto das transformadas de Fourier desses sinais, isto é, ![](https://i.postimg.cc/Qtsgnh6M/eq-9.png). Dessa forma, o filtro laplaciano deduzido anteriormente também pode ser implementado no domínio da frequência utilizando a máscara de filtragem supramencionada.
+Pelo teorema da convolução, sabe-se que a convolução de dois sinais em um domínio é análoga à multiplicação ponto a ponto das transformadas de Fourier desses sinais, isto é, ![](https://i.postimg.cc/xdTYnbFD/eq-17.png). Dessa forma, o filtro laplaciano deduzido anteriormente também pode ser implementado no domínio da frequência utilizando a máscara de filtragem supramencionada.
 
 ## Metodologia
 
@@ -92,17 +97,15 @@ entre verde e vermelho sejam difíceis de serem percebidos, os contrastes
 entre verde e azul e entre vermelho e azul são percebidos normalmente.
 Dessa forma, é possível aplicar transformações no contraste de azul em
 imagens com alta intensidade de vermelho ou verde, de modo a facilitar a
-identificação das informações dessas imagens [@visocor].
+identificação das informações dessas imagens.
 
 Considerando-se o espaço de cores RGB, este filtro age na componente
-azul da imagem por meio de um parâmetro $i$, que pode ser manipulado via
+azul da imagem por meio de um parâmetro ![i](https://i.postimg.cc/rpbH3dB9/eq-26.png), que pode ser manipulado via
 código, cuja função é definir o nível de contraste entre vermelho e azul
 ou verde e azul por meio da alteração da intensidade de azul em
-componentes com alta intensidade de vermelhou ou verde, conforme
-elucidado na Figura [\[fig:recolor\]](#fig:recolor){reference-type="ref"
-reference="fig:recolor"}.
+componentes com alta intensidade de vermelhou ou verde.
 
-Dado um valor de $i$, a heurística do filtro de recoloração funciona de
+Dado um valor de ![i](https://i.postimg.cc/rpbH3dB9/eq-26.png), a heurística do filtro de recoloração funciona de
 seguinte forma:
 
 ![](https://i.postimg.cc/sfTPwF5V/eq-10.png)
@@ -111,10 +114,7 @@ seguinte forma:
 
 ![](https://i.postimg.cc/65SrxdHg/eq-12.png)
 
-Os parâmetros $\alpha$, $\beta$ e $\gamma$ são utilizados para calcular os novos pixels do canal azul da imagem, da seguinte maneira:
-![](https://i.postimg.cc/bwtQysWJ/eq-13.png)
-dessa forma, quando $i < 0$, por exemplo, então $\alpha > 0$ e
-$\beta = 0$, logo a intensidade de azul será maior em pixels de cor vermelha.
+Os parâmetros ![\alpha](https://i.postimg.cc/d01MzcLJ/eq-20.png), ![\beta](https://i.postimg.cc/50Yh25BG/eq-21.png) e ![\gamma](https://i.postimg.cc/7hSjgxQn/eq-22.png) são utilizados para calcular os novos pixels do canal azul da imagem, da seguinte maneira ![](https://i.postimg.cc/XJt0f1N4/eq-18.png). Dessa forma, quando ![i < 0](https://i.postimg.cc/WprRRnbq/eq-23.png), por exemplo, então ![\alpha > 0](https://i.postimg.cc/xTyW81m0/eq-24.png) e ![\beta = 0](https://i.postimg.cc/0yVFGXZF/eq-25.png), logo a intensidade de azul será maior em pixels de cor vermelha.
 
 ## Resultados
 
