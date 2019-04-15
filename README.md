@@ -1,6 +1,6 @@
 # Filtro de Recoloração de Imagens
-![GitHub release](https://img.shields.io/github/release/maurofalc/recoloration_filter.svg?style=social)
-![GitHub](https://img.shields.io/github/license/maurofalc/recoloration_filter.svg?style=social)
+<!-- ![GitHub release](https://img.shields.io/github/release/maurofalc/recoloration_filter.svg?style=social)
+![GitHub](https://img.shields.io/github/license/maurofalc/recoloration_filter.svg?style=social) -->
 
 Este projeto trata-se de uma implementação em MATLAB de uma ferramenta de recoloração de imagens cujo objetivo é facilitar a percepção de de imagens por pessoas portadoras de algum tipo de cegueira de cor.
  
@@ -20,20 +20,20 @@ Entretanto, os contrastes entre verde e azul e entre vermelho e azul são perceb
 
 ### Imagem Digital
 
-Uma imagem digital, no domínio do espaço, consiste na representação de uma imagem bidimensional por meio de um conjunto finito de pontos, que agregam um valor numérico em si, formando uma matriz em que cada elemento é denominado pixel. Tipicamente, uma imagem monocromática é caracterizada por uma função ![](https://i.postimg.cc/j2YzJKfT/eq-14.png) de duas dimensões. 
+Uma imagem digital, no domínio do espaço, consiste na representação de uma imagem bidimensional por meio de um conjunto finito de pontos, que agregam um valor numérico em si, formando uma matriz em que cada elemento é denominado pixel. Tipicamente, uma imagem monocromática é caracterizada por uma função ![i[x,y]](https://i.postimg.cc/P51nmQ0k/eq-15.png) de duas dimensões. 
 
 <p align="center">
-<img src="https://i.postimg.cc/VsVMXfW8/img-2.png" alt="Uma imagem de uma paisagem e a representação dela vista por um daltônico." width="80.0%" />
+<img src="https://i.postimg.cc/kMbYHgXn/img-2.png" alt="Representação de uma imagem digital no domínio do espaço." width="30.0%" />
 <br>
-<i>Uma imagem de uma paisagem e a representação dela vista por um daltônico.</i>
+<i>Representação de uma imagem digital no domínio do espaço.</i>
 </p>
 
 Imagens coloridas consistem em múltiplas matrizes, conhecidas como canais, que agregam em si a informação de cor associada a cada matriz. Para este trabalho, utilizou-se o modelo de cores RGB para tratar as informações das imagens. Este modelo baseia-se nas coordenadas cartesianas de um espaço formado por um cubo, cujos vértices são constituídos pelas cores primárias juntamente com as cores branca, preta, ciano, magenta e amarela, conforme ilustrado abaixo. Nessa representação,, cada pixel constitui um vetor de três componentes, os quais caracterizam as intensidades de vermelho, verde e azul.
 
 <p align="center">
-<img src="https://i.postimg.cc/qByQLDjq/img-3.png" alt="Uma imagem de uma paisagem e a representação dela vista por um daltônico." width="80.0%" />
+<img src="https://i.postimg.cc/qByQLDjq/img-3.png" alt="Representação do cubo de cores RGB." width="30.0%" />
 <br>
-<i>Uma imagem de uma paisagem e a representação dela vista por um daltônico.</i>
+<i>Representação do Cubo de cores RGB.</i>
 </p>
 
 ### Filtros de Aguçamento Baseados em Derivadas
@@ -63,7 +63,7 @@ Fazendo-se $\Delta x = \Delta y = 1$ na equação acima é possível obter uma m
 A figura a seguir representa o efeito do realce do filtro laplaciano sobre uma imagem. Observa-se que, embora a tonalidade do fundo tenha permanecido praticamente intacta, as bordas e as descontiuidades foram realçadas e os detalhes finos tornaram-se mais nítidos.
 
 <p align="center">
-<img src="https://i.postimg.cc/cLz0mJLQ/img-4.png" alt="Efeito do realce gerado em uma imagem utilizando o filtro laplaciano." width="80.0%" />
+<img src="https://i.postimg.cc/cLz0mJLQ/img-4.png" alt="Efeito do realce gerado em uma imagem utilizando o filtro laplaciano." width="100.0%" />
 <br>
 <i>Efeito do realce gerado em uma imagem utilizando o filtro laplaciano.</i>
 </p>
@@ -118,7 +118,7 @@ $\beta = 0$, logo a intensidade de azul será maior em pixels de cor vermelha.
 
 ## Resultados
 
-Utilizou-se a ferramenta online Coblis (*Color Blindness Simulator*) [@simulator] para simular a visão de um daltônico para as imagens originais e compará-las com as obtidas pelo filtro de destaque.
+Utilizou-se a ferramenta online Coblis (*Color Blindness Simulator*) para simular a visão de um daltônico para as imagens originais e compará-las com as obtidas pelo filtro de destaque.
 
 ## Referências
 
@@ -134,6 +134,6 @@ MATHWORKS. MATLAB for Deep Learning. 2018. Software Matlab. Disponível em: <htt
 
 NISHIMORI, R. A. V.; JR, R. H. Ferramenta de acessibilidade para deficientes visuais em cores. Universidade de São Paulo, 2013. Trabalho de Conclusão de Curso.
 
-SOUZA, L. A. de. John Dalton. 2018. Disponível em: <https://mundoeducacao.bol.uol.com.br/ quimica/john-dalton.htm>.
+SOUZA, L. A. de. John Dalton. 2018. Disponível em: <https://mundoeducacao.bol.uol.com.br/quimica/john-dalton.htm>.
 
-VARELLA, M. H. Daltonismo. 2015. Disponível em: <https://drauziovarella.uol.com.br/ doencas-e-sintomas/daltonismo/>.
+VARELLA, M. H. Daltonismo. 2015. Disponível em: <https://drauziovarella.uol.com.br/doencas-e-sintomas/daltonismo/>.
