@@ -124,19 +124,21 @@ Os parâmetros ![\alpha](https://i.postimg.cc/d01MzcLJ/eq-20.png), ![\beta](http
 
 ## Resultados
 
-Utilizou-se a ferramenta online *Color Blindness Simulator* [Coblis](https://www.color-blindness.com/coblis-color-blindness-simulator/) para simular a visão de um daltônico para as imagens originais e compará-las com as obtidas pelo filtro de destaque.
+Utilizou-se a ferramenta online *Color Blindness Simulator* ([Coblis](https://www.color-blindness.com/coblis-color-blindness-simulator/)) para simular a visão de um daltônico para as imagens originais e compará-las com as obtidas pelo filtro de recoloração.
 
 <p align="center">
-<img src="https://i.postimg.cc/MGysPsYz/img-6.png" alt="Mapa de Sobral e a simulação dele visto por um daltônico." width="100.0%" />
+<img src="https://i.postimg.cc/MGysPsYz/img-6.png" alt="Mapa de Sobral e a simulação dele visto por um daltônico." width="80.0%" />
 <br>
 <i>Mapa de Sobral e a simulação dele visto por um daltônico.</i>
 </p>
 
 <p align="center">
-<img src="https://i.postimg.cc/NFT7FFPB/img-7.png" alt="Mapa de Sobral após aplicação do filtro de recoloração e a simulação dele visto por um daltônico." width="100.0%" />
+<img src="https://i.postimg.cc/NFT7FFPB/img-7.png" alt="Mapa de Sobral após aplicação do filtro de recoloração e a simulação dele visto por um daltônico." width="80.0%" />
 <br>
 <i>Mapa de Sobral após aplicação do filtro de recoloração e a simulação dele visto por um daltônico.</i>
 </p>
+
+Comparando-se as imagens após a aplicação do filtro é possícel notar que o contraste entre as cores aumentou significativamente devido à recoloração. Observa-se, também, que as linhas finas do mapa ficaram mais nítidas, em virtude do realce aplicado pelo filtro laplaciano.
 
 ## Referências
 
