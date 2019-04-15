@@ -31,7 +31,7 @@ Uma imagem digital, no domínio do espaço, consiste na representação de uma i
 Imagens coloridas consistem em múltiplas matrizes, conhecidas como canais, que agregam em si a informação de cor associada a cada matriz. Para este trabalho, utilizou-se o modelo de cores RGB para tratar as informações das imagens. Este modelo baseia-se nas coordenadas cartesianas de um espaço formado por um cubo, cujos vértices são constituídos pelas cores primárias juntamente com as cores branca, preta, ciano, magenta e amarela, conforme ilustrado abaixo. Nessa representação, cada pixel constitui um vetor de três componentes, os quais caracterizam as intensidades de vermelho, verde e azul.
 
 <p align="center">
-<img src="https://i.postimg.cc/qByQLDjq/img-3.png" alt="Representação do cubo de cores RGB." width="30.0%" />
+<img src="https://i.postimg.cc/qByQLDjq/img-3.png" alt="Representação do cubo de cores RGB." width="40.0%" />
 <br>
 <i>Representação do cubo de cores RGB.</i>
 </p>
@@ -48,21 +48,21 @@ Nas imagens digitais, as bordas são transições parecidas com rampas em termos
 
 O filtro laplaciano é o operador derivativo mais simples para uma função de imagem, e é definido como:
 
-![](https://i.postimg.cc/tg9tB9v4/eq-1.png)
+![](https://i.postimg.cc/PJdQRT54/eq-30.png)
 
 Contudo, em se tratando do contexto discreto das imagens digitais, tal operador não pode ser utilizado. Nesse caso, dada uma função contínua ![f(x,y)](https://i.postimg.cc/T2ZRg1hg/eq-16.png) obtida através da amostragem de ![i[x,y]](https://i.postimg.cc/P51nmQ0k/eq-15.png), é possível obter as seguintes aproximações para as derivadas parciais:
 
-![](https://i.postimg.cc/bvPL4xr8/eq-3.png)
+![](https://i.postimg.cc/G2FjKHdt/eq-29.png)
 
-![](https://i.postimg.cc/G22P1qC0/eq-4.png)
+![](https://i.postimg.cc/2jxwBb0X/eq-31.png)
 
 Logo, o filtro laplaciano pode ser definido por:
 
-![](https://i.postimg.cc/1tjGRwm8/eq-5.png)
+![](https://i.postimg.cc/mDfw7QxK/eq-28.png)
 
 Fazendo-se $\Delta x = \Delta y = 1$ na equação acima é possível obter uma máscara, ou *kernel*, de filtragem que representa uma implementação aproximada do laplaciano, da seguinte forma: 
 
-![](https://i.postimg.cc/W1scwkVF/eq-19.png)
+![](https://i.postimg.cc/bv2gGm5Q/eq-27.png)
 
 A figura a seguir representa o efeito do realce do filtro laplaciano sobre uma imagem. Observa-se que, embora a tonalidade do fundo tenha permanecido praticamente intacta, as bordas e as descontiuidades foram realçadas e os detalhes finos tornaram-se mais nítidos.
 
@@ -108,9 +108,9 @@ componentes com alta intensidade de vermelhou ou verde.
 Dado um valor de ![i](https://i.postimg.cc/rpbH3dB9/eq-26.png), a heurística do filtro de recoloração funciona de
 seguinte forma:
 
-![](https://i.postimg.cc/sfTPwF5V/eq-10.png)
+![](https://i.postimg.cc/jddh6x9q/eq-32.png)
 
-![](https://i.postimg.cc/hPhLYC0V/eq-11.png)
+[![eq-11.png](https://i.postimg.cc/hPhLYC0V/eq-11.png)](https://postimg.cc/svdGQ4q2)
 
 ![](https://i.postimg.cc/65SrxdHg/eq-12.png)
 
