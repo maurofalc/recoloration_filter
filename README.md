@@ -2,7 +2,7 @@
 <!-- ![GitHub release](https://img.shields.io/github/release/maurofalc/recoloration_filter.svg?style=social)
 ![GitHub](https://img.shields.io/github/license/maurofalc/recoloration_filter.svg?style=social) -->
 
-Este projeto trata-se de uma implementação em MATLAB de uma ferramenta de recoloração de imagens cujo objetivo é facilitar a percepção de de imagens por pessoas portadoras de algum tipo de cegueira de cor.
+Este projeto trata-se de uma implementação em MATLAB de uma ferramenta de recoloração de imagens cujo objetivo é facilitar a percepção de imagens por pessoas portadoras de algum tipo de cegueira de cor.
  
 ## Introdução
 
@@ -86,10 +86,6 @@ Seja ![i[x,y]](https://i.postimg.cc/P51nmQ0k/eq-15.png) uma imagem digital de di
 
 Pelo teorema da convolução, sabe-se que a convolução de dois sinais em um domínio é análoga à multiplicação ponto a ponto das transformadas de Fourier desses sinais, isto é, ![](https://i.postimg.cc/xdTYnbFD/eq-17.png). Dessa forma, o filtro laplaciano deduzido anteriormente também pode ser implementado no domínio da frequência utilizando a máscara de filtragem supramencionada.
 
-## Metodologia
-
-O filtro de recoloração consiste na aplicação do filtro laplaciano, para realçar a imagem, seguida da aplicação do filtro de recoloração, para aumentar o contraste entre o verde e o vermelho.
-
 ## Filtro de Recoloração
 
 Na visão de um portador de daltonismo, sabe-se que, embora os contrastes
@@ -122,6 +118,10 @@ seguinte forma:
 
 Os parâmetros ![\alpha](https://i.postimg.cc/d01MzcLJ/eq-20.png), ![\beta](https://i.postimg.cc/50Yh25BG/eq-21.png) e ![\gamma](https://i.postimg.cc/7hSjgxQn/eq-22.png) são utilizados para calcular os novos pixels do canal azul da imagem, da seguinte maneira ![](https://i.postimg.cc/XJt0f1N4/eq-18.png). Dessa forma, quando ![i < 0](https://i.postimg.cc/WprRRnbq/eq-23.png), por exemplo, então ![\alpha > 0](https://i.postimg.cc/xTyW81m0/eq-24.png) e ![\beta = 0](https://i.postimg.cc/0yVFGXZF/eq-25.png), logo a intensidade de azul será maior em pixels de cor vermelha.
 
+## Metodologia
+
+O filtro de recoloração consiste na aplicação do filtro laplaciano, para realçar a imagem, seguida da aplicação do filtro de recoloração, para aumentar o contraste entre o verde e o vermelho.
+
 ## Resultados
 
 Utilizou-se a ferramenta online *Color Blindness Simulator* ([Coblis](https://www.color-blindness.com/coblis-color-blindness-simulator/)) para simular a visão de um daltônico para as imagens originais e compará-las com as obtidas pelo filtro de recoloração.
@@ -138,7 +138,7 @@ Utilizou-se a ferramenta online *Color Blindness Simulator* ([Coblis](https://ww
 <i>Mapa de Sobral após aplicação do filtro de recoloração e a simulação dele visto por um daltônico.</i>
 </p>
 
-Comparando-se as imagens após a aplicação do filtro é possícel notar que o contraste entre as cores aumentou significativamente devido à recoloração. Observa-se, também, que as linhas finas do mapa ficaram mais nítidas, em virtude do realce aplicado pelo filtro laplaciano.
+Comparando-se as imagens após a aplicação do filtro é possível notar que o contraste entre as cores aumentou significativamente devido à recoloração. Observa-se, também, que as linhas finas do mapa ficaram mais nítidas, em virtude do realce aplicado pelo filtro laplaciano.
 
 ## Referências
 
